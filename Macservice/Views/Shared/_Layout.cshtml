@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Macservice</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Macservice", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-list"></i> Quản lý danh mục <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Phongbans">Phòng ban</a></li>
+                            <li><a href="/Chucvus">Chức vụ</a></li>
+                            <li><a href="/Trinhdo_chuyenmon">Trình độ chuyên môn</a></li>
+                            <li><a href="/Khenthuongs">Khen thưởng</a></li>
+                            <li><a href="/Kyluats">Kỷ luật</a></li>
+                            <li><a href="/Loaihopdongs">Hợp đồng</a></li>
+                            <li><a href="/Baohiems">Bảo hiểm</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-screenshot"></i>  QL Nhân sự <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Thongtinnhansus">Thông tin nhân viên</a></li>
+                            <li><a href="/Chitietphongbans">Quá trình công tác</a></li>
+                            <li><a href="/Chitietkhenthuongs">Khen thưởng</a></li>
+                            <li><a href="/Chitietkyluats">Kỷ luật</a></li>
+                            <li><a href="/Nghỉpheps">Nghỉ phép</a></li>
+                            <li><a href="/Hopdongs">Hợp đồng</a></li>
+                            <li><a href="/Chitietbaohiems">Bảo hiểm</a></li>
+                            <li><a href="/Lichtrinhcongtacs">Lịch trình công tác </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -  Quản lý nhân sự công ty Macservice</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

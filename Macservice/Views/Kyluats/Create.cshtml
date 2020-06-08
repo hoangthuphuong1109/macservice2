@@ -1,0 +1,54 @@
+﻿@model Macservice.Models.Kyluat
+
+@{
+    ViewBag.Title = "Thêm mới kỷ luật";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ol class="breadcrumb">
+    <li><a href="/Kyluats">Quản lý Kỷ luật </a></li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+
+<h2>Thêm mới Kỷ luật</h2>
+
+<div class="row">
+    <div class="col-sm-6">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label>Mã Kỷ luật <span style="color:red">*</span></label>
+                <input type="text" readonly="readonly" value='Tự động tạo mã' class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Tên Kỷ luật <span style="color:red">*</span></label>
+                @Html.EditorFor(model => model.Tenkyluat, new { htmlAttributes = new { @class = "form-control", @required = "@required" } })
+                @Html.ValidationMessageFor(model => model.Tenkyluat, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label> Nội dung </label>
+                @Html.EditorFor(model => model.Noidung, new { htmlAttributes = new { @class = "form-control", @* @required = "@required" *@}
+        })
+                @Html.ValidationMessageFor(model => model.Noidung, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label> Quyết định </label>
+                @Html.EditorFor(model => model.Quyetdinh, new { htmlAttributes = new { @class = "form-control", @* @required = "@required" *@}
+        })
+                @Html.ValidationMessageFor(model => model.Quyetdinh, "", new { @class = "text-danger" })
+            </div>
+
+            <hr />
+            <div class="form-group">
+                <input type="submit" value="Thêm mới" class="btn btn-success" />
+                @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-default" })
+
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

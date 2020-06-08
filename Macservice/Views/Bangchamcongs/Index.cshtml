@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Macservice.Models.Bangchamcong>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Thangchamcong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nam)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Thangchamcong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nam)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Mabangcong }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Mabangcong }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Mabangcong })
+        </td>
+    </tr>
+}
+
+</table>

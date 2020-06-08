@@ -1,0 +1,67 @@
+﻿@model Macservice.Models.Nghiphep
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Nghiphep</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Thongtinnhansu.Hoten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thongtinnhansu.Hoten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaynghi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaynghi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Thoigiannghi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thoigiannghi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lydo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lydo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nghicoluong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nghicoluong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nghỉkhongluong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nghỉkhongluong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Manghiphep }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
